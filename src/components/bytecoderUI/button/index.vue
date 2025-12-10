@@ -1,3 +1,10 @@
+<template>
+	<el-button :size="size" :type="type">
+		<!-- 定义插槽用于让用户自定义按钮你们的内容 -->
+		<slot></slot>
+	</el-button>
+	<!-- <el-button type="primary">Primary</el-button> -->
+</template>
 <script setup>
 /**
  * 接收传过来的值
@@ -18,18 +25,9 @@ defineProps({
 </script>
 <script>
 export default {
-	name: "MukButton",
+	name: "li-button",
 };
 </script>
-
-<template>
-	<button class="muk-btn" :class="[size, type]">
-		<!-- 定义插槽用于让用户自定义按钮你们的内容 -->
-		<slot></slot>
-	</button>
-	<el-button type="primary">Primary</el-button>
-</template>
-
 <style scoped lang="less">
 .muk-btn {
 	appearance: none;

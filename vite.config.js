@@ -5,11 +5,11 @@ import path from "path";
 export default defineConfig({
 	plugins: [vue()],
 	build: {
-		outDir: "muk-ui", //输出文件名称
+		outDir: "bytecoderUI", //输出文件名称
 		lib: {
-			entry: path.resolve(__dirname, "./src/components/muk-ui/index.js"), //指定组件编译入口文件
-			name: "muk-ui",
-			fileName: "muk-ui",
+			entry: path.resolve(__dirname, "./src/components/bytecoderUI/index.js"), //指定组件编译入口文件
+			name: "bytecoderUI",
+			fileName: "bytecoderUI",
 		}, //库编译模式配置
 		rollupOptions: {
 			// 确保外部化处理那些你不想打包进库的依赖

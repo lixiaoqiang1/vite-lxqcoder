@@ -1,28 +1,86 @@
-<script setup></script>
-
 <template>
-	<MukButton size="large" type="primary">我是测试组件</MukButton>
-	<!-- <Imagebox /> -->
-	<Imagebox
-      :images="imglist"
-      :initial-index="0"
-      thumbnail-width="200px"
-      thumbnail-height="150px"
-    />
-	<!-- <Imagebox src="https://bytepiping-storage.bytebroad.com.cn/quchi/webImg/banner2.png" /> -->
+  <div id="app">
+    <comButon />
+	<hr />
+	<comImgbox />
+	<hr />
+	<comMenu />
+	<hr />
+	<!-- <comBnaner /> -->
+	<!-- <comBnaner
+      :display-type="displayType"
+      :carousel-list="carouselList"
+      :video-url="videoUrl"
+      :prev-arrow="prevArrow"
+      :next-arrow="nextArrow"
+      :custom-buttons="customButtons"
+      :show-buttons="true"
+      @item-click="handleItemClick"
+      @button-click="handleButtonClick"
+    /> -->
+	<comBnaner />
+  </div>
 </template>
-<script lang="ts" >
-const imglist=[
-		{ url: 'https://maas-watermark-prod.cn-wlcb.ufileos.com/202512041239197de00f6324b149db_watermark.png?UCloudPublicKey=TOKEN_75a9ae85-4f15-4045-940f-e94c0f82ae90&Signature=xkCdUsFeWpluI%2FiJ0rNmMI1bpGM%3D&Expires=1764909566', alt: '图片1' },
-		{ url: 'https://maas-watermark-prod.cn-wlcb.ufileos.com/2025120412391950ab1cca2f954058_watermark.png?UCloudPublicKey=TOKEN_75a9ae85-4f15-4045-940f-e94c0f82ae90&Signature=N2TOkY1Ygkn9QUmF1fH4xPjT%2F20%3D&Expires=1764909570', alt: '图片2' },
-		{ url: 'https://maas-watermark-prod.cn-wlcb.ufileos.com/202512041239195f91b3f423d34177_watermark.png?UCloudPublicKey=TOKEN_75a9ae85-4f15-4045-940f-e94c0f82ae90&Signature=YwqjT8BZhuGftEIoER%2FKcY6T5gc%3D&Expires=1764909567', alt: '图片3' },
-		{ url: 'https://maas-watermark-prod.cn-wlcb.ufileos.com/20251204123919294a0e3cf66044e2_watermark.png?UCloudPublicKey=TOKEN_75a9ae85-4f15-4045-940f-e94c0f82ae90&Signature=olB8pZuqU2oIKn8VoGQIkuwWMJ8%3D&Expires=1764909566', alt: '图片4' },
-	]
-import { reactive, onMounted, ref, onBeforeUnmount } from 'vue'
-const state = reactive({
-	
-})
+
+<script>
+import comButon from './common/butonlist.vue'
+import comImgbox from './common/imgbox.vue'
+import comMenu from './common/menu.vue'
+import comBnaner from './common/banners.vue'
+
+export default {
+  name: 'App',
+  components:{
+	comButon,
+	comImgbox,
+	comMenu,
+	comBnaner
+  },
+  created(){},
+  data(){
+	    //         :style="{
+        //       backgroundImage: `url('${item.bottomBannerImageUrl}')`,
+        //       backgroundSize: 'cover',
+        //       backgroundPosition: 'center',
+        //     }"
+        //   >
+        //     <div class="introduction-area">
+        //       <h1 class="title">{{ item.title }}</h1>
+        //       <p class="description">{{ item.briefIntroduction }}</p>
+	return{
+		prevArrow: '',
+      	nextArrow: '',
+		displayType:'Y',
+		carouselList:[
+			{
+				bottomBannerImageUrl:'https://acm-concr-front-api.bytebroad.com.cn/api/file/getObj?fileId=38b46a7242474dfa98b90455ffb36818&quot',
+				title:'标题',
+				briefIntroduction:'简介',
+			},
+			{
+				bottomBannerImageUrl:'https://acm-concr-front-api.bytebroad.com.cn/api/file/getObj?fileId=38b46a7242474dfa98b90455ffb36818&quot',
+				title:'标题',
+				briefIntroduction:'简介',
+			},
+		],
+		videoUrl:'Y',
+		displayType:'Y',
+	}
+  },
+  methods:{
+	getNewDetail(row){
+		console.log(row)
+	}
+  }
+  
+
+}
 </script>
-
-<style scoped></style>
-
+<style scoped>
+#app{
+	width: 100%;
+}
+.margin10{
+	margin: 10px 0;
+}
+</style>
