@@ -12,8 +12,12 @@
 </template>
 
 <script>
+// import { BannerCarousel } from 'bytecoderui1'
 export default {
   name: "banner",
+  components: {
+    // 'li-banners': BannerCarousel,
+  },
   data() {
     return {
       prevArrow: "1",

@@ -1,29 +1,53 @@
 {
-  "name": "bytecoder-ui",
-  "private": true,
+  "name": "bytecoder-ui1",
   "version": "1.0.0",
   "description": "图片弹框查看组件，轮播图组件，按钮组件",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+  "main": "./dist/bytecoderUI.umd.cjs",
+  "module": "./dist/bytecoderUI.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/bytecoderUI.js",
+      "require": "./dist/bytecoderUI.umd.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./style.css": "./dist/style.css"
   },
-  "keywords": ["bytecoder-ui","bytecoder","vue3-bytecoder-ui","vue3-vite-bytecoder-ui","bytecoder"],
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite --config vite.site.config.js",
+    "build:lib": "vite build --config vite.lib.config.js",
+    "build:site": "vite build --config vite.site.config.js",
+    "preview": "vite preview",
+    "preview:site": "vite preview --config vite.site.config.js"
+  },
+  "keywords": [
+    "bytecoder-ui",
+    "bytecoder",
+    "vue3-bytecoder-ui",
+    "vue3-vite-bytecoder-ui",
+    "bytecoder"
+  ],
   "dependencies": {
+    "bytecoderui1": "^1.0.0",
     "element-plus": "^2.11.9",
     "less": "^4.4.2",
-    "router": "^2.2.0",
-    "store": "^2.0.12",
-    "vue": "^3.5.24"
+    "vue": "^3.0.0",
+    "vue-router": "^4.6.4"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
   },
   "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.0",
     "@vitejs/plugin-vue": "^6.0.1",
-    "css-loader": "^7.1.2",
     "sass": "^1.94.2",
-    "sass-loader": "^16.0.6",
-    "style-loader": "^4.0.0",
-    "vite": "npm:rolldown-vite@7.2.5"
+    "typescript": "^5.6.3",
+    "vite": "npm:rolldown-vite@7.2.5",
+    "vue-tsc": "^2.2.5"
   },
   "overrides": {
     "vite": "npm:rolldown-vite@7.2.5"

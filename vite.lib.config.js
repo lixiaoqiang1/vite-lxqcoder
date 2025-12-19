@@ -9,7 +9,7 @@ export default defineConfig({
 		lib: {
 			entry: path.resolve(__dirname, "./src/components/bytecoderUI/index.js"), //指定组件编译入口文件
 			name: "bytecoderUI",
-			fileName: "bytecoderUI",
+			fileName: "bytecoderUI1",
 		}, //库编译模式配置
 		rollupOptions: {
 			// 确保外部化处理那些你不想打包进库的依赖

@@ -13,11 +13,10 @@
 </template>
 
 <script>
-// import { Imagebox } from 'your-package-name';
-
+import { Imagebox } from 'bytecoderui1'
 export default {
   components: {
-    // Imagebox
+    'li-imagebox': Imagebox,
   },
   data() {
     return {
